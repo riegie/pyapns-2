@@ -32,4 +32,3 @@ The non-instance specfic stuff is the following:
 Any interaction with APNs necessarily involves using and maintaining large lists of device tokens. In practice, these will be stored in a database. It's the responsibility of library clients to provide the necessary glue between the library and the datastore. This kind of glue is not hard to build, but it usually is application specific.
 
 Another aspect of APNs is the rigamarole surrounding the creating of keys, certificates and the association of these items with the application to which you'd like to send notifications. I can provide some guidance on this. It's tedious but not all that difficult to understand.
-
