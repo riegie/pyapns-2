@@ -1,4 +1,6 @@
-# PyAPNs a Python library for Apple Push Notifications
+# PyAPNs
+
+A Python library for Apple Push Notifications
 
 ## Introduction
 
@@ -12,13 +14,15 @@ In addition to the class, three sample programs are included that make use of it
 
 ## API
 
-The constructor of the implementation class opens an SSL connection to an APNs server. By  (notification or feedback). It has 
+The constructor of the `connection` class opens an SSL connection to an APNs server (notification or feedback, depending on the specified port number). It has the following methods.
 
- `write_push_msg` uses the class method above and sends it to the server specified when the object was created.
+- `write_push_msg` uses the class method above and sends it to the server specified when the object was created.
 
-`read_feedback_msg` read information about a dead device from the Feedback service. It returns a hash with `:token` and `:dead_at` keys.
+- `read_feedback_msg` read information about a dead device from the Feedback service. It returns a hash with `:token` and `:dead_at` keys.
 
-`check_for_error` raises a PushError exception if it is able to read an error message from the connection used to send notifications. It is intended to be called in the loop that sends a series of notifications to the APNs service.
+- `check_for_error` raises a PushError exception if it is able to read an error message from the connection used to send notifications. It is intended to be called in the loop that sends a series of notifications to the APNs service.
+
+The `error` class is based on the standard Python exception class. You (the application developer) don't create these. The `connection` class raises them if something goes wrong.
 
 The non-instance specfic stuff is the following:
 
